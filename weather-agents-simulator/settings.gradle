@@ -1,0 +1,3 @@
+rootProject.name = 'weather-agents-simulator'
+include 'weather-consumer-service'
+
