@@ -1,5 +1,7 @@
 package c4c.kafka.example.weatherconsumer.dto;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,12 +9,14 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
-@Entity(name = "cities")
+@Entity(name = "log")
 public class WeatherLog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "incrementDomain")
+    @GenericGenerator(name = "incrementDomain", strategy = "increment")
     private int id;
+
     private String city;
     private BigDecimal latitude;
 
@@ -20,6 +24,15 @@ public class WeatherLog {
     private BigDecimal temp;
     private Calendar logdate;
 
+    public WeatherLog(String city, BigDecimal latitude, BigDecimal longitude, BigDecimal temp, Calendar logdate) {
+        this.city = city;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.temp = temp;
+        this.logdate = logdate;
+
+    }
+    public WeatherLog(){}
     public String getCity() {
         return city;
     }

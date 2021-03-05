@@ -34,10 +34,7 @@ public class WeatherAgentServiceImpl implements WeatherAgentService {
         Iterable<City> cities = this.cityRepository.findAll();
         int i =0;
         for (City city : cities) {
-            if (i++ > 10)
-                break;
-// nextInt as provided by Random is exclusive of the top value so you need to add 1
-            float randomNum = min + rand.nextFloat() * (max - min);;
+            float randomNum = min + rand.nextFloat() * (max - min);
             this.executor.submit(new WeatherTask(city, randomNum));
         }
     }

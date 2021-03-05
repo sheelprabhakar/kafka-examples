@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="kafka-producers" target="1.8" />
+      <module name="kafka-producers.main" target="1.8" />
+      <module name="kafka-producers.test" target="1.8" />
+      <module name="producer-consumer" target="1.8" />
+      <module name="producer-consumer.main" target="1.8" />
+      <module name="producer-consumer.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
