@@ -51,7 +51,8 @@ public class WeatherAgentServiceImpl implements WeatherAgentService {
         @Override
         public Boolean call() throws Exception {
             WeatherInfo info = new WeatherInfo(city.getName(), city.getLatitude(), city.getLongitude(), temp);
-           kafkaTemplate.send("weather-log2",""+info.getLogDate().getTimeInMillis(), info);
+           //kafkaTemplate.send("weather-log2",""+info.getLogDate().getTimeInMillis(), info);
+            kafkaTemplate.send("extreme-weather",""+info.getLogDate().getTimeInMillis(), info);
             System.out.println(city.getName() + ":" +temp);
             return true;
         }

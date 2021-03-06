@@ -36,10 +36,10 @@ public class KafkaConsumerConfig {
                 groupId);
         props.put(
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
-                JsonDeserializer.class);
+                StringDeserializer.class);
         props.put(
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-                StringDeserializer.class);
+                JsonDeserializer.class);
         props.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false);
         JsonDeserializer<WeatherInfo> deserializer = new JsonDeserializer<>(WeatherInfo.class);
         deserializer.setRemoveTypeHeaders(false);

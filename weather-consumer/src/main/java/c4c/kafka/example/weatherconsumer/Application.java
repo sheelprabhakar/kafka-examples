@@ -32,4 +32,19 @@ public class Application {
             e.printStackTrace();
         }
     }
+
+    @KafkaListener(topics = "extreme-weather-filter", groupId = "group-1", containerFactory = "kafkaListenerContainerFactory")
+    public void listenExtremeWeather(WeatherInfo record) {
+        System.out.println("Received extreme weather: " + record.getTemp());
+        try {
+            try {
+                weatherLogService.saveLogs(new WeatherLog(record.getCity(), record.getLatitude(), record.getLongitude()
+                        , BigDecimal.valueOf(record.getTemp()), record.getLogDate()));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
