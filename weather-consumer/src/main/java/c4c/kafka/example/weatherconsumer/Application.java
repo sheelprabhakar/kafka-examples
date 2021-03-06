@@ -22,15 +22,14 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-
-   @KafkaListener(topics = "weather-log2", groupId = "group-1", containerFactory = "kafkaListenerContainerFactory")
-    public void listenGroupFoo(WeatherInfo record){
+    @KafkaListener(topics = "weather-log2", groupId = "group-1", containerFactory = "kafkaListenerContainerFactory")
+    public void listenGroupFoo(WeatherInfo record) {
         System.out.println("Received Message in group foo: " + record.getTemp());
-       try {
-           weatherLogService.saveLogs(new WeatherLog(record.getCity(), record.getLatitude(), record.getLongitude()
-           ,  BigDecimal.valueOf(record.getTemp()), record.getLogDate()));
-       } catch (InterruptedException e) {
-           e.printStackTrace();
-       }
-   }
+        try {
+            weatherLogService.saveLogs(new WeatherLog(record.getCity(), record.getLatitude(), record.getLongitude()
+                    , BigDecimal.valueOf(record.getTemp()), record.getLogDate()));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
