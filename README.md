@@ -1,5 +1,5 @@
 # Kafka-examples
-This repo contains Kafka Java Examples, currently, there are two Gradle projects one is Kafka producer and another one is Kafka consumer using spring-boot
+This repo contains Kafka Spring Boot Examples, currently, there are 3 Gradle projects one is Kafka producer, Kafka consumer and Streams using spring-boot
 ## Spring boot Kafka producer
 Spring boot project inside weather-agents-simulator directory used to send demo temperature data to Kafka topic
 ## Spring boot Kafka Consumer
