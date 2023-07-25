@@ -56,5 +56,12 @@ public class WeatherAgentServiceImpl implements WeatherAgentService {
             System.out.println(city.getName() + ":" +temp);
             return true;
         }
+
+    /*@Override
+    public Boolean call() throws Exception {
+    WeatherInfo info = new WeatherInfo(city.getName(), city.getLatitude(), city.getLongitude(), temp);
+    kafkaTemplate.send("extreme-weather",""+info.getLogDate().getTimeInMillis(), info);
+        return true;
+    }*/
     }
 }

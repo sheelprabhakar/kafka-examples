@@ -17,11 +17,11 @@ ALTER TABLE weather.log
 
 -- Partitions SQL
 
-CREATE TABLE weather.log_2021_02 PARTITION OF weather.log
-    FOR VALUES FROM ('2021-02-01') TO ('2021-03-01');
+CREATE TABLE weather.log_2023_07 PARTITION OF weather.log
+    FOR VALUES FROM ('2023-07-01') TO ('2023-08-01');
 
-CREATE TABLE weather.log_2021_03 PARTITION OF weather.log
-    FOR VALUES FROM ('2021-03-01') TO ('2021-04-01');
+CREATE TABLE weather.log_2023_08 PARTITION OF weather.log
+    FOR VALUES FROM ('2023-08-01') TO ('2023-09-01');
 
-CREATE TABLE weather.log_2021_04 PARTITION OF weather.log
-    FOR VALUES FROM ('2021-04-01') TO ('2021-05-01');
+CREATE TABLE weather.log_2023_09 PARTITION OF weather.log
+    FOR VALUES FROM ('2023-09-01') TO ('2023-10-01');

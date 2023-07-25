@@ -1,6 +1,11 @@
 package c4c.kafka.example.weatheragent.dto;
 
-import javax.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.math.BigDecimal;
 import java.util.Calendar;
 
@@ -14,7 +19,7 @@ public class City {
     @Column(name = "country_id")
     private int countryId;
 
-    @Column(name = "country_code")
+    @Column(name = "country_code", columnDefinition = "char")
     private String countryCode;
 
     private BigDecimal latitude;
