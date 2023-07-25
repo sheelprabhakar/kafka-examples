@@ -18,7 +18,7 @@ public class Application {
     }
 
     //600000
-    @Scheduled(fixedRate = 600000)
+    @Scheduled(fixedRate = 60000, initialDelay = 100)
     public void postWeather() {
         this.weatherAgentService.update();
     }

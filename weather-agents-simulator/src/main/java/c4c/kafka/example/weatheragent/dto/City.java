@@ -11,10 +11,6 @@ public class City {
     private int id;
 
     private String name;
-
-    @Column(name = "state_id")
-    private int stateId;
-
     @Column(name = "country_id")
     private int countryId;
 
@@ -25,17 +21,6 @@ public class City {
 
     private BigDecimal longitude;
 
-    @Column(name = "created_at")
-    private Calendar createdAt;
-
-    @Column(name = "updated_at")
-    private Calendar updateAt;
-
-    @Column(name = "flag")
-    private boolean flag;
-
-    @Column(name = "wiki_data_id")
-    private String wikiDataId;
 
     public int getId() {
         return id;
@@ -51,14 +36,6 @@ public class City {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getStateId() {
-        return stateId;
-    }
-
-    public void setStateId(int stateId) {
-        this.stateId = stateId;
     }
 
     public int getCountryId() {
@@ -93,35 +70,4 @@ public class City {
         this.longitude = longitude;
     }
 
-    public Calendar getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Calendar createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Calendar getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(Calendar updateAt) {
-        this.updateAt = updateAt;
-    }
-
-    public boolean isFlag() {
-        return flag;
-    }
-
-    public void setFlag(boolean flag) {
-        this.flag = flag;
-    }
-
-    public String getWikiDataId() {
-        return wikiDataId;
-    }
-
-    public void setWikiDataId(String wikiDataId) {
-        this.wikiDataId = wikiDataId;
-    }
 }
