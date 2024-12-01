@@ -1,6 +1,6 @@
 plugins {
-    id 'org.springframework.boot' version '3.1.2'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '3.3.2'
+    id 'io.spring.dependency-management' version '1.1.6'
     id 'java'
 }
 group 'c4c.kafka.example'
@@ -16,8 +16,8 @@ dependencies {
     implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '3.0.9'
     implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '3.5.1'
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
